@@ -69,7 +69,7 @@ def other_class(n_classes, current_class):
 
 
 class MNISTNoisy(datasets.MNIST):
-    def __init__(self, root, train=True, transform=None, target_transform=None, download=True, nosiy_rate=0.0, asym=False, seed=0):
+    def __init__(self, root, train=True, transform=None, target_transform=None, =True, nosiy_rate=0.0, asym=False, seed=0):
         super(MNISTNoisy, self).__init__(root, transform=transform, target_transform=target_transform, download=download)
         self.targets = self.targets.numpy()
         if asym:
@@ -541,7 +541,7 @@ class WebVisionDatasetLoader:
 
 
 class ImageNetMini(datasets.ImageNet):
-    def __init__(self, root, split='val', download=False, **kwargs):
+    def __init__(self, root, split='val', download=True, **kwargs):
         super(ImageNetMini, self).__init__(root, download=download, split=split, **kwargs)
         self.new_targets = []
         self.new_images = []
@@ -559,7 +559,7 @@ class ImageNetMini(datasets.ImageNet):
 
 
 class NosieImageNet(datasets.ImageNet):
-    def __init__(self, root, split='train', seed=999, download=False, target_class_num=200, nosiy_rate=0.4, **kwargs):
+    def __init__(self, root, split='train', seed=999, download=True, target_class_num=200, nosiy_rate=0.4, **kwargs):
         super(NosieImageNet, self).__init__(root, download=download, split=split, **kwargs)
         random.seed(seed)
         np.random.seed(seed)
