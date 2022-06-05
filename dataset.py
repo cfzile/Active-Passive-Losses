@@ -118,7 +118,7 @@ class MNISTNoisy(datasets.MNIST):
 
 class cifar10Nosiy(datasets.CIFAR10):
     def __init__(self, root, train=True, transform=None, target_transform=None, download=True, nosiy_rate=0.0, asym=False):
-        super(cifar10Nosiy, self).__init__(root, transform=transform, target_transform=target_transform)
+        super(cifar10Nosiy, self).__init__(root, transform=transform, download=download, starget_transform=target_transform)
         self.download = download
         if asym:
             # automobile < - truck, bird -> airplane, cat <-> dog, deer -> horse
