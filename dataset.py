@@ -69,7 +69,7 @@ def other_class(n_classes, current_class):
 
 
 class MNISTNoisy(datasets.MNIST):
-    def __init__(self, root, train=True, transform=None, target_transform=None, =True, nosiy_rate=0.0, asym=False, seed=0):
+    def __init__(self, root, train=True, transform=None, target_transform=None, download=True, nosiy_rate=0.0, asym=False, seed=0):
         super(MNISTNoisy, self).__init__(root, transform=transform, target_transform=target_transform, download=download)
         self.targets = self.targets.numpy()
         if asym:
